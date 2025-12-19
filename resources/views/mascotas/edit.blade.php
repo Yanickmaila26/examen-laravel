@@ -11,7 +11,7 @@
                 <div class="mb-3">
                     <label class="form-label">Nombre de la Mascota *</label>
                     <input type="text" name="nombre_mascota" value="{{ $mascota->nombre_mascota }}" class="form-control"
-                        required>
+                        onkeypress="soloLetras(event)" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tipo *</label>
@@ -26,13 +26,14 @@
                 <div class="mb-3">
                     <label class="form-label">Dueño de la Mascota *</label>
                     <input type="text" name="nombre_dueño" value="{{ $mascota->nombre_dueño }}" class="form-control"
-                        required>
+                        onkeypress="soloLetras(event)" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label class="form-label">Teléfono *</label>
-                    <input type="text" name="telefono" value="{{ $mascota->telefono }}" class="form-control" required>
+                    <input type="text" name="telefono" value="{{ $mascota->telefono }}" class="form-control"
+                        onkeypress="soloNumeros(event)" required>
                 </div>
 
                 <div class="mb-3">
@@ -53,7 +54,8 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label class="form-label">Instrucciones Especiales</label>
-                    <textarea name="instrucciones_especiales" class="form-control" rows="3">{{ $mascota->instrucciones_especiales }}</textarea>
+                    <textarea name="instrucciones_especiales" class="form-control" onkeypress="soloLetrasNumerosEspacios(event)"
+                        rows="3">{{ $mascota->instrucciones_especiales }}</textarea>
                 </div>
             </div>
         </div>

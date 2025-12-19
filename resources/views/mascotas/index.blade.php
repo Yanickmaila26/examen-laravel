@@ -62,6 +62,17 @@
                                             <span class="d-none d-md-inline">Recoger</span>
                                         </button>
                                     </form>
+                                    <!-- Botón Eliminar -->
+                                    <form action="{{ route('mascotas.destroy', $mascota) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"
+                                            onclick="return confirm('¿Eliminar definitivamente?')">
+                                            <i class="bi bi-trash"></i>
+                                            <span class="d-none d-md-inline">Eliminar</span>
+                                        </button>
+                                    </form>
                                 @else
                                     <form action="{{ route('mascotas.hospedado', $mascota) }}" method="POST"
                                         class="d-inline">
@@ -75,16 +86,7 @@
                                     </form>
                                 @endif
 
-                                <!-- Botón Eliminar -->
-                                <form action="{{ route('mascotas.destroy', $mascota) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"
-                                        onclick="return confirm('¿Eliminar definitivamente?')">
-                                        <i class="bi bi-trash"></i>
-                                        <span class="d-none d-md-inline">Eliminar</span>
-                                    </button>
-                                </form>
+
                             </div>
                         </td>
                     </tr>

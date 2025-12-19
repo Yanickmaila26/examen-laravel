@@ -35,7 +35,6 @@ class Mascota extends Model
     static public function updateMascotaRecogida(Mascota $mascota)
     {
         $mascota->estado = 'recogido';
-        $mascota->fecha_salida = null;
         $mascota->save();
     }
     static public function updateMascotaHospedado(Mascota $mascota)
